@@ -1,5 +1,5 @@
-vim.opt.number = true      -- Exibe a numeração das linhas
-vim.opt.relativenumber = true -- (Opcional) Exibe numeração relativa
+vim.opt.number = true      -- Show numertion in lines
+vim.opt.relativenumber = true -- (optional) relative lines numeration
 
 require("config.lazy")
 
@@ -42,15 +42,15 @@ cmp.setup({
   },
   snippet = {
     expand = function(args)
-      require('luasnip').lsp_expand(args.body)  -- Usando LuaSnip para expandir snippets
+      require('luasnip').lsp_expand(args.body)  -- Using LuaSnip to expand snippets
     end,
   },
   mapping = cmp.mapping.preset.insert({
-    ['<C-Space>'] = cmp.mapping.complete(),  -- Ativar autocompletar
-    ['<CR>'] = cmp.mapping.confirm({ select = true }),  -- Confirmar sugestão
+    ['<C-Space>'] = cmp.mapping.complete(),  -- Autocomplete
+    ['<CR>'] = cmp.mapping.confirm({ select = true }),  -- Confirm suggestion
   }),
   sources = {
-    { name = 'nvim_lsp' },  -- LSP como fonte de completions
-    { name = 'luasnip' },   -- Snippets como fonte de completions
+    { name = 'nvim_lsp' },  -- LSP as source of completions
+    { name = 'luasnip' },   -- Snippets as source of completions
   },
 })
