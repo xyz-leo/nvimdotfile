@@ -1,3 +1,5 @@
+First, after cloning the repo, change the folder name to nvim and put the files in .config
+
 requirements: pyright (python LSP)
 To install:
 Arch - yay -S pyright
