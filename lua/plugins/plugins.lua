@@ -42,7 +42,18 @@ return {
     	"mfussenegger/nvim-dap", -- Debugger
     	"mfussenegger/nvim-dap-python" -- Debugger específico para Python
 	},
-
+	
+	{
+	  "windwp/nvim-autopairs",
+	  event = "InsertEnter",
+	  config = true
+	},
+	{
+	  "windwp/nvim-ts-autotag",
+	  opts = {},
+	  event = "InsertEnter",
+	  dependencies = { "nvim-treesitter/nvim-treesitter" },
+	}
 }
 
 

@@ -13,14 +13,20 @@ require'lspconfig'.pyright.setup{
     }
 }
 
+require'lspconfig'.html.setup{}
 
 require("dap-python").setup("~/.virtualenvs/debugpy/bin/python")
 
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = { "python", "html", "javascript", "typescript", "lua" },
+  highlight = {
+    enable = true,
+  },
+  autotag = {
+    enable = true,
+  },
+}
 
-require("nvim-treesitter.configs").setup({
-    ensure_installed = { "python", "lua" },
-    highlight = { enable = true },
-})
 
 require("catppuccin").setup({
     transparent_background = true,
@@ -54,3 +60,9 @@ cmp.setup({
     { name = 'luasnip' },   -- Snippets as source of completions
   },
 })
+
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
+
+require('lspconfig').html.setup {
+  capabilities = capabilities,
+}
