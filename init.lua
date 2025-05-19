@@ -1,6 +1,16 @@
 vim.opt.number = true      -- Show numertion in lines
 vim.opt.relativenumber = true -- (optional) relative lines numeration
 
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = { "html", "css", "javascript", "json", "yaml", "lua" },
+  callback = function()
+    vim.opt_local.tabstop = 2
+    vim.opt_local.shiftwidth = 2
+    vim.opt_local.softtabstop = 2
+    vim.opt_local.expandtab = true
+  end
+})
+
 require("config.lazy")
 
 require'lspconfig'.pyright.setup{
